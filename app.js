@@ -8,8 +8,15 @@ import errorMiddleware from "./middlewares/error.middleware.js";
 import cookieParser from "cookie-parser";
 import { arcjetMiddleware } from "./middlewares/arcjet.middleware.js";
 import workflowRouter from "./routes/workflow.routes.js";
+import cors from "cors";
 
 const app = express();
+
+app.use(cors({
+  origin: "*",
+  methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+}));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

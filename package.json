@@ -11,8 +11,10 @@
     "@arcjet/inspect": "^1.0.0-beta.6",
     "@arcjet/node": "^1.0.0-beta.6",
     "@upstash/workflow": "^0.2.12",
+    "@vercel/node": "latest",
     "bcryptjs": "^3.0.2",
     "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
     "dayjs": "^1.11.13",
     "debug": "~2.6.9",
     "dotenv": "^16.5.0",
@@ -21,8 +23,7 @@
     "mongodb": "^6.16.0",
     "mongoose": "^8.14.0",
     "morgan": "~1.9.1",
-    "nodemailer": "^6.10.1",
-    "@vercel/node": "latest"
+    "nodemailer": "^6.10.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.1",
