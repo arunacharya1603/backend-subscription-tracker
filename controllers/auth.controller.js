@@ -76,4 +76,29 @@ export const signIn = async (req, res, next) => {
     }
 }
 
-export const signOut = async (req, res, next) => {}
+export const signOut = async (req, res, next) => {
+    try {
+        res.clearCookie("token");
+        res.status(200).json({
+            success: true,
+            message: "User logged out successfully"
+        });
+    } catch (error) {
+        next(error);
+    }
+}
+
+export const checkAuth = (req, res, next) => {
+    try {
+        res.status(200).json({
+            _id: req.user._id,
+            email: req.user.email,
+            fullName: req.user.fullName,
+            profilePic: req.user.profilePic,
+            createdAt: req.user.createdAt,
+        });
+    } catch (error) {
+        next(error);
+        console.log("Error in check auth controller", error.message);
+    }
+}
